@@ -118,6 +118,28 @@ function myReplace(str, before, after) {
 
 myReplace("His name is Tom", "Tom", "john");
 
+// Pig Latin
+
+function translatePigLatin(str) {
+  var regex = /[aeiou]/gi;
+  // if it starts with vowel just add way to the end
+  if (str[0].match(regex)) {
+    str = str + "way";
+  }
+  else {
+  // it it does not, go up until it reaches first vowel
+    // look for first vowel and store in a variable
+    var firstV = str.indexOf(str.match(regex)[0]);
+    // srote the value of firstV in a variable
+    var value = str.slice(0, firstV);
+    // then split it out and push it all to the back with "ay"
+    str = str.slice(firstV) + value + "ay";
+  }
+  return str;
+}
+
+translatePigLatin("glove");
+
 // DNA Pairing
 
 function pairElement(str) {
