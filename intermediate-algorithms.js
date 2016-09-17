@@ -130,9 +130,9 @@ function translatePigLatin(str) {
   // it it does not, go up until it reaches first vowel
     // look for first vowel and store in a variable
     var firstV = str.indexOf(str.match(regex)[0]);
-    // srote the value of firstV in a variable
+    // grab the letters up to the first vowel and store in value
     var value = str.slice(0, firstV);
-    // then split it out and push it all to the back with "ay"
+    // then add the first vowel with the value and add "ay"
     str = str.slice(firstV) + value + "ay";
   }
   return str;
