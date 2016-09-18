@@ -242,7 +242,44 @@ function uniteUnique(arr) {
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-// Spinal Tap case
+// Convert HTML Entities
+
+function convertHTML(str) {
+  //split each letter
+  str = str.split('');
+
+  //use switch statement for the characters given
+  var convert = function(letter) {
+    switch(letter) {
+      case "&":
+        str[i] = str[i].replace(/&/i, "&amp;");
+        break;
+      case "<":
+        str[i] = str[i].replace(/</i, "&lt;");
+        break;
+      case ">":
+        str[i] = str[i].replace(/>/i, "&gt;");
+        break;
+      case '"':
+        str[i] = str[i].replace(/"/i, "&quot;");
+        break;
+      case "'":
+        str[i] = str[i].replace(/'/i, "&apos;");
+        break;
+    }
+  };
+
+  //loop through and run convert
+  for (var i = 0; i < str.length; i++) {
+    convert(str[i]);
+  }
+
+  return str.join('');
+}
+
+convertHTML("Dolce & Gabbana");
+
+// Spinal Tap Case
 
 function spinalCase(str) {
   //create regex variable for spaces and underscores so we can replace
