@@ -241,3 +241,18 @@ function uniteUnique(arr) {
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+// Spinal Tap case
+
+function spinalCase(str) {
+  //create regex variable for spaces and underscores so we can replace
+  var spaceUnderScore = /\s+|_+/g;
+  //separate all cap letters and low case with spaces
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  //replace spaceUnderScore with -
+  //turn everything lowercase
+  str = str.replace(spaceUnderScore, '-').toLowerCase();
+  return str;
+}
+
+spinalCase('Teletubbies say Eh-oh');
