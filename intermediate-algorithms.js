@@ -293,3 +293,28 @@ function spinalCase(str) {
 }
 
 spinalCase('Teletubbies say Eh-oh');
+
+// Sum All Odd Fibonacci Numbers
+
+function sumFibs(num) {
+  // add all odd fibb numbers
+  // add the number previously before it, after 1
+  var previous = 0;
+  var current = 1;
+  var result = 0;
+  // make it add one for now
+  while (current <= num) {
+    if (current % 2 !== 0) {
+      result += current;
+    }
+    // make variable for previous added to current
+    var added = previous + current;
+    // move current and previous up
+    previous = current;
+    current = added;
+  }
+
+  return result;
+}
+
+sumFibs(4);
