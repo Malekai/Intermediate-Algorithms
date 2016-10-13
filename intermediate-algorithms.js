@@ -322,10 +322,14 @@ sumFibs(4);
 // Sum All Primes
 
 function sumPrimes(num) {
+  // array to hold numbers beforehand
   var arr = [];
+  // array to hold primes
   var primes = [];
+  // push numbers into arr
   for (var i = 0; i < num; i++) {
     arr.push(i);
+    // if number is prime add to primes
     for (i = 2; i <= num; ++i) {
       if (!arr[i]) {
         // i has not been marked -- it is prime
@@ -336,7 +340,7 @@ function sumPrimes(num) {
       }
     }
   }
-
+  // add all prime numbers together for sum
   return primes.reduce((a, b) => a + b);
 }
 
