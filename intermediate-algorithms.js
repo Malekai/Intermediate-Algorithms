@@ -345,3 +345,14 @@ function sumPrimes(num) {
 }
 
 sumPrimes(10);
+
+// Finders Keepers
+
+function findElement(arr, func) {
+  var num = 0;
+  var filtered = arr.filter(func);
+  //only return the first one
+  return filtered[0];
+}
+
+findElement([1, 3, 5, 8, 9, 10], function (num){ return num % 2 === 0; });
