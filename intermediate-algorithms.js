@@ -356,3 +356,19 @@ function findElement(arr, func) {
 }
 
 findElement([1, 3, 5, 8, 9, 10], function (num){ return num % 2 === 0; });
+
+// Drop it
+
+function dropElements(arr, func) {
+  // Drop them elements.
+  // Remove zeroth index out of array that does not meet the     function
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+     if (!func(arr[0])) {
+      arr.shift();
+    }
+  }
+  return arr;
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n > 5;});
